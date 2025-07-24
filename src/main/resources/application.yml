@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    hikari:
+      maximum-pool-size: 20
+      connection-timeout: 5000
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+
+app:
+  transaction:
+    max-retries: 3
+    backoff-ms: 100
